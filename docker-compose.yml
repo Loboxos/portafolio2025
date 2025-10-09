@@ -9,7 +9,7 @@ services:
     networks:
       - sistemas_network
     ports:
-      - "3002:80"  # Puerto diferente a otros sistemas
+      - "3003:80"  # Puerto diferente a otros sistemas
 
 networks:
   sistemas_network:
