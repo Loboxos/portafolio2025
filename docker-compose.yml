@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # Nginx para servir el portafolio React
+  nginx:
+    build: ./portafoliofront
+    container_name: portafolio_nginx
+    restart: unless-stopped
+    networks:
+      - sistemas_network
+    ports:
+      - "3002:80"  # Puerto diferente a otros sistemas
+
+networks:
+  sistemas_network:
+    external: true
