@@ -17,8 +17,8 @@ const Experience = () => {
         'Migracion de sistema de gestion de escritorio a web',
       ],
       technologies: ['Django', 'React', 'mysql', 'Docker', 'delphi', 'reportmanager'],
-      logo: PLACEHOLDER_IMAGES.COMPANY_80_80,
-      website: 'https://borgest.com',
+      logo: '/logos/logoBorgest.png',
+      website: 'https://borgest.com.ar/',
       featured: true
     },
     {
@@ -34,13 +34,13 @@ const Experience = () => {
         'Gestion de usuarios,sucursales,productos,ventas,stock,etc',
       ],
       technologies: ['Django', 'React', 'mysql', 'docker'],
-      logo: PLACEHOLDER_IMAGES.COMPANY_80_80,
-      website: 'https://sgs.com',
+      logo: '/logos/logoSGS.png',
+      website: 'https://cvdev.io',
       featured: true
     },
     {
       id: 3,
-      company: 'Daira it',
+      company: 'DAIRA IT Group',
       position: 'Desarrollador Full Stack Trainee',
       period: '2024',
       location: 'Salta, Argentina',
@@ -49,8 +49,8 @@ const Experience = () => {
         'Desarrollo de aplicaciones simples CRUD para gestion de datos',
       ],
       technologies: ['Angular', 'golang', 'mysql','Docker'],
-      logo: PLACEHOLDER_IMAGES.COMPANY_80_80,
-      website: 'https://daira.com',
+      logo: '/logos/logoDaira.png',
+      website: 'https://dairaitgroup.com.ar/',
       featured: false
     },
   ]

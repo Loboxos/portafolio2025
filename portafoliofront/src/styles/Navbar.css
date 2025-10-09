@@ -140,8 +140,20 @@
     display: none;
   }
 
+  /* En móviles: mostrar con click */
   .brand-hover-text {
-    display: none;
+    font-size: 0.65rem;
+    margin-left: 0.5rem;
+  }
+
+  .brand-hover-text.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .brand-hover-text.show::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
 

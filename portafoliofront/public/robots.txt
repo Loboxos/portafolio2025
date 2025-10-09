@@ -1,0 +1,10 @@
+# robots.txt para cvdev.io
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cvdev.io/sitemap.xml
+
+# Disallow admin or private paths (if any)
+# Disallow: /admin/
+
