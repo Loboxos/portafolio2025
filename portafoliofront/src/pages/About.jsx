@@ -28,7 +28,7 @@ const About = () => {
             <h1>Sobre Mí</h1>
             <p className="lead">
               Desarrollador de software especializado en soluciones de gestión empresarial, 
-              con más de 5 años de experiencia creando sistemas que optimizan procesos empresariales.
+              con más de 2 años de experiencia creando sistemas que optimizan procesos empresariales.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ const About = () => {
             
             <div className="profile-stats">
               <div className="stat-card">
-                <h3>5+</h3>
+                <h3>2+</h3>
                 <p>Años de Experiencia</p>
               </div>
               <div className="stat-card">
