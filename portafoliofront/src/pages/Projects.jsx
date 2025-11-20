@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { Filter, Code, Database, Globe, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Filter, Code, Database, Globe, ChevronLeft, ChevronRight, Briefcase, GraduationCap } from 'lucide-react'
 import { PLACEHOLDER_IMAGES } from '../config/images'
 import '../styles/Projects.css'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('todos')
+  const [typeFilter, setTypeFilter] = useState('client')
   const [currentImageIndexes, setCurrentImageIndexes] = useState({})
 
   const projects = [
@@ -18,6 +19,7 @@ const Projects = () => {
         '/losprimos2/losprimos22.png'
       ],
       category: 'sistemas',
+      projectType: 'client',
       technologies: ['Django', 'React', 'PostgreSQL', 'Bootstrap'],
       featured: true
     },
@@ -31,7 +33,48 @@ const Projects = () => {
         '/focus/focus2.png'
       ],
       category: 'sistemas',
+      projectType: 'client',
       technologies: ['React', 'Django REST', 'PostgreSQL', 'Calendar API'],
+      featured: true
+    },
+    {
+      id: 9,
+      title: 'Bot Facturador de ARCA',
+      description: 'Bot de WhatsApp para facturación electrónica. Permite crear facturas paso a paso directamente desde WhatsApp, gestionar clientes, consultar historial de facturas y descargar PDFs. Integrado con API para facturación electrónica y validación con ARCA.',
+      images: [
+        '/facturador/facturador0.jpeg',
+        '/facturador/facturador1.jpeg',
+        '/facturador/facturador2.jpeg'
+      ],
+      category: 'sistemas',
+      projectType: 'client',
+      technologies: ['Node.js', 'Baileys', 'Django REST', 'AFIP API'],
+      featured: true
+    },
+    {
+      id: 8,
+      title: 'Sistema de Sorteos y Rifas',
+      description: 'Plataforma completa para la gestión y realización de sorteos y rifas solidarias. Incluye gestión de participantes, sorteos aleatorios, seguimiento de ganadores y panel de administración para organizaciones benéficas y eventos solidarios.',
+      images: [
+        '/sorteo/sorteo0.png',
+        '/sorteo/sorteo1.png',
+        '/sorteo/sorteo3.png'
+      ],
+      category: 'sistemas',
+      projectType: 'client',
+      technologies: ['Django REST', 'React', 'MySQL', 'Docker'],
+      featured: true
+    },
+    {
+      id: 7,
+      title: 'Portafolios Web Profesionales',
+      description: 'Desarrollo de portafolios web personalizados para profesionales y emprendedores. Diseños modernos, responsivos y optimizados para mostrar servicios, experiencia y proyectos de forma impactante.',
+      images: [
+        '/portafolios/portafolio0.png'
+      ],
+      category: 'web',
+      projectType: 'client',
+      technologies: ['React', 'Vite', 'CSS3', 'Responsive Design'],
       featured: true
     },
     {
@@ -44,6 +87,7 @@ const Projects = () => {
         '/itbank/itbank2.png'
       ],
       category: 'fintech',
+      projectType: 'personal',
       technologies: ['React', 'Django', 'PostgreSQL', 'JWT'],
       featured: true
     },
@@ -57,6 +101,7 @@ const Projects = () => {
         '/borgest/borgest2.png'
       ],
       category: 'sistemas',
+      projectType: 'personal',
       technologies: ['Django', 'React', 'PostgreSQL', 'Docker'],
       featured: false
     },
@@ -70,6 +115,7 @@ const Projects = () => {
         '/servify/servify2.png'
       ],
       category: 'marketplace',
+      projectType: 'personal',
       technologies: ['React', 'Django REST', 'PostgreSQL', 'Stripe'],
       featured: false
     },
@@ -83,46 +129,25 @@ const Projects = () => {
         '/eltributo/eltributo2.png'
       ],
       category: 'web',
+      projectType: 'personal',
       technologies: ['React', 'Django', 'PostgreSQL', 'Rich Text Editor'],
       featured: false
-    },
-    {
-      id: 7,
-      title: 'Portafolios Web Profesionales',
-      description: 'Desarrollo de portafolios web personalizados para profesionales y emprendedores. Diseños modernos, responsivos y optimizados para mostrar servicios, experiencia y proyectos de forma impactante.',
-      images: [
-        '/portafolios/portafolio0.png'
-      ],
-      category: 'web',
-      technologies: ['React', 'Vite', 'CSS3', 'Responsive Design'],
-      featured: true
-    },
-    {
-      id: 8,
-      title: 'Sistema de Sorteos y Rifas',
-      description: 'Plataforma completa para la gestión y realización de sorteos y rifas solidarias. Incluye gestión de participantes, sorteos aleatorios, seguimiento de ganadores y panel de administración para organizaciones benéficas y eventos solidarios.',
-      images: [
-        '/sorteo/sorteo0.png',
-        '/sorteo/sorteo1.png',
-        '/sorteo/sorteo3.png'
-      ],
-      category: 'sistemas',
-      technologies: ['Django REST', 'React', 'MySQL', 'Docker'],
-      featured: true
     }
   ]
 
-  const filters = [
-    { id: 'todos', label: 'Todos', icon: Filter },
+  const categoryFilters = [
+    { id: 'todos', label: 'Todas', icon: Filter },
     { id: 'sistemas', label: 'Sistemas', icon: Database },
     { id: 'web', label: 'Web', icon: Globe },
     { id: 'fintech', label: 'Fintech', icon: Code },
     { id: 'marketplace', label: 'Marketplace', icon: Globe }
   ]
 
-  const filteredProjects = activeFilter === 'todos' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter)
+  const filteredProjects = projects.filter(project => {
+    const matchesType = project.projectType === typeFilter
+    const matchesCategory = activeFilter === 'todos' || project.category === activeFilter
+    return matchesType && matchesCategory
+  })
 
   const nextImage = (projectId, imagesLength) => {
     setCurrentImageIndexes(prev => ({
@@ -159,11 +184,11 @@ const Projects = () => {
           </div>
         </section>
 
-        {/* Filtros */}
+        {/* Filtros por Categoría */}
         <section className="filters-section">
           <div className="container-wide">
             <div className="filters-container">
-            {filters.map((filter) => (
+            {categoryFilters.map((filter) => (
               <button
                 key={filter.id}
                 className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
@@ -173,6 +198,24 @@ const Projects = () => {
                 <span>{filter.label}</span>
               </button>
             ))}
+            </div>
+            
+            {/* Botones de tipo de proyecto */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+              <button
+                className={`filter-btn ${typeFilter === 'client' ? 'active' : ''}`}
+                onClick={() => setTypeFilter('client')}
+              >
+                <Briefcase size={20} />
+                <span>Proyectos Reales</span>
+              </button>
+              <button
+                className={`filter-btn ${typeFilter === 'personal' ? 'active' : ''}`}
+                onClick={() => setTypeFilter('personal')}
+              >
+                <GraduationCap size={20} />
+                <span>Estudiantiles</span>
+              </button>
             </div>
           </div>
         </section>
@@ -235,11 +278,11 @@ const Projects = () => {
                     <h3>{project.title}</h3>
                     <div className="project-category">
                       {(() => {
-                        const filter = filters.find(f => f.id === project.category)
+                        const filter = categoryFilters.find(f => f.id === project.category)
                         const IconComponent = filter ? filter.icon : Code
                         return <IconComponent size={16} />
                       })()}
-                      <span>{filters.find(f => f.id === project.category)?.label}</span>
+                      <span>{categoryFilters.find(f => f.id === project.category)?.label || project.category}</span>
                     </div>
                   </div>
                   
