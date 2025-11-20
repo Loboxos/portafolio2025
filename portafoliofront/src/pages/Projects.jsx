@@ -20,7 +20,7 @@ const Projects = () => {
       ],
       category: 'sistemas',
       projectType: 'client',
-      technologies: ['Django', 'React', 'PostgreSQL', 'Bootstrap'],
+      technologies: ['Django REST', 'React', 'MySQL'],
       featured: true
     },
     {
@@ -34,7 +34,7 @@ const Projects = () => {
       ],
       category: 'sistemas',
       projectType: 'client',
-      technologies: ['React', 'Django REST', 'PostgreSQL', 'Calendar API'],
+      technologies: ['React', 'Django REST', 'MySQL'],
       featured: true
     },
     {
@@ -52,6 +52,34 @@ const Projects = () => {
       featured: true
     },
     {
+      id: 10,
+      title: 'Casa de Cambio',
+      description: 'Sistema completo para casa de cambio con gestión de movimientos entre diferentes monedas, préstamos, cierre de caja diario y cotizaciones en tiempo real. Control integral de transacciones cambiarias y reportes financieros.',
+      images: [
+        '/casadecambio/casa1.png',
+        '/casadecambio/casa2.png',
+        '/casadecambio/casa3.png'
+      ],
+      category: 'fintech',
+      projectType: 'client',
+      technologies: ['React', 'Django REST', 'MySQL'],
+      featured: true
+    },
+    {
+      id: 4,
+      title: 'Borgest',
+      description: 'Sistema de gestión empresarial completo con módulos de facturación, inventario, recursos humanos y reportes.',
+      images: [
+        '/borgest/borgest0.png',
+        '/borgest/borgest1.png',
+        '/borgest/borgest2.png'
+      ],
+      category: 'sistemas',
+      projectType: 'client',
+      technologies: ['Django REST', 'React', 'MySQL'],
+      featured: true
+    },
+    {
       id: 8,
       title: 'Sistema de Sorteos y Rifas',
       description: 'Plataforma completa para la gestión y realización de sorteos y rifas solidarias. Incluye gestión de participantes, sorteos aleatorios, seguimiento de ganadores y panel de administración para organizaciones benéficas y eventos solidarios.',
@@ -62,7 +90,7 @@ const Projects = () => {
       ],
       category: 'sistemas',
       projectType: 'client',
-      technologies: ['Django REST', 'React', 'MySQL', 'Docker'],
+      technologies: ['Django REST', 'React', 'MySQL'],
       featured: true
     },
     {
@@ -74,7 +102,7 @@ const Projects = () => {
       ],
       category: 'web',
       projectType: 'client',
-      technologies: ['React', 'Vite', 'CSS3', 'Responsive Design'],
+      technologies: ['React'],
       featured: true
     },
     {
@@ -88,22 +116,8 @@ const Projects = () => {
       ],
       category: 'fintech',
       projectType: 'personal',
-      technologies: ['React', 'Django', 'PostgreSQL', 'JWT'],
+      technologies: ['React', 'Django REST', 'MySQL'],
       featured: true
-    },
-    {
-      id: 4,
-      title: 'Borgest',
-      description: 'Sistema de gestión empresarial completo con módulos de facturación, inventario, recursos humanos y reportes.',
-      images: [
-        '/borgest/borgest0.png',
-        '/borgest/borgest1.png',
-        '/borgest/borgest2.png'
-      ],
-      category: 'sistemas',
-      projectType: 'personal',
-      technologies: ['Django', 'React', 'PostgreSQL', 'Docker'],
-      featured: false
     },
     {
       id: 5,
@@ -116,7 +130,7 @@ const Projects = () => {
       ],
       category: 'marketplace',
       projectType: 'personal',
-      technologies: ['React', 'Django REST', 'PostgreSQL', 'Stripe'],
+      technologies: ['React', 'Django REST', 'MySQL'],
       featured: false
     },
     {
@@ -130,7 +144,7 @@ const Projects = () => {
       ],
       category: 'web',
       projectType: 'personal',
-      technologies: ['React', 'Django', 'PostgreSQL', 'Rich Text Editor'],
+      technologies: ['React', 'Bootstrap', 'API REST'],
       featured: false
     }
   ]
