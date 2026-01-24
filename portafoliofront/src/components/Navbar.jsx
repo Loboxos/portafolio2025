@@ -11,6 +11,7 @@ const Navbar = () => {
     { path: '/', label: 'Inicio' },
     { path: '/about', label: 'Sobre Mí' },
     { path: '/projects', label: 'Proyectos' },
+    { path: '/caso-losprimos2', label: 'Caso Los Primos2' },
     { path: '/experience', label: 'Experiencia' },
     { path: '/contact', label: 'Contacto' }
   ]

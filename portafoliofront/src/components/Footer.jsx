@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Github, Globe } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import '../styles/Footer.css'
 
 const Footer = () => {
@@ -38,6 +39,11 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <p>&copy; {currentYear} SGS Soluciones de Gestión Santos. Todos los derechos reservados.</p>
+          <div className="footer-links">
+            <Link to="/privacy-policy" className="footer-link">
+              Política de Privacidad
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
