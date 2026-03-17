@@ -1,9 +1,9 @@
-# robots.txt para cvdev.io
+# robots.txt para cristianvilla.com
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://cvdev.io/sitemap.xml
+Sitemap: https://cristianvilla.com/sitemap.xml
 
 # Disallow admin or private paths (if any)
 # Disallow: /admin/

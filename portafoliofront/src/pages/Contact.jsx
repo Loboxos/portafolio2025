@@ -23,13 +23,13 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     try {
       // Configuración de EmailJS
       const serviceId = 'service_i6mih25'
       const templateId = 'template_10ftbqi'
       const publicKey = 'TiPSP_G3CX9JD8_hU'
-      
+
       // Parámetros para el template
       const templateParams = {
         from_name: formData.name,
@@ -38,19 +38,19 @@ const Contact = () => {
         message: formData.message,
         to_email: 'vcristian528@gmail.com'
       }
-      
+
       // Enviar email
       await emailjs.send(serviceId, templateId, templateParams, publicKey)
-      
+
       setIsSubmitting(false)
       setIsSubmitted(true)
-      
+
       // Resetear formulario después de 3 segundos
       setTimeout(() => {
         setIsSubmitted(false)
         setFormData({ name: '', email: '', subject: '', message: '' })
       }, 3000)
-      
+
     } catch (error) {
       console.error('Error al enviar email:', error)
       setIsSubmitting(false)
@@ -113,7 +113,7 @@ const Contact = () => {
     },
     {
       name: 'Sitio Web',
-      url: 'https://cvdev.io',
+      url: 'https://cristianvilla.com',
       icon: Globe,
       color: '#2563eb'
     }
@@ -126,7 +126,7 @@ const Contact = () => {
         <section className="contact-hero">
           <h1>Contacto</h1>
           <p className="lead">
-            ¿Tienes un proyecto en mente o quieres colaborar? 
+            ¿Tienes un proyecto en mente o quieres colaborar?
             Estoy aquí para ayudarte a hacer realidad tus ideas.
           </p>
         </section>
@@ -179,7 +179,7 @@ const Contact = () => {
           {/* Formulario de Contacto */}
           <section className="contact-form-section">
             <h2>Envíame un Mensaje</h2>
-            
+
             {isSubmitted ? (
               <div className="success-message">
                 <CheckCircle size={48} />
@@ -241,8 +241,8 @@ const Contact = () => {
                 </div>
 
                 <div className="form-actions">
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="btn btn-primary submit-btn"
                     disabled={isSubmitting}
                   >
@@ -259,8 +259,8 @@ const Contact = () => {
                     )}
                   </button>
 
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="btn btn-whatsapp"
                     onClick={handleWhatsAppSend}
                     disabled={!formData.name || !formData.message}
@@ -280,7 +280,7 @@ const Contact = () => {
             <div className="cta-content">
               <h2>¿Listo para empezar tu proyecto?</h2>
               <p>
-                Transformemos tu idea en una solución tecnológica que impulse tu negocio. 
+                Transformemos tu idea en una solución tecnológica que impulse tu negocio.
                 Estoy aquí para ayudarte en cada paso del proceso.
               </p>
               <div className="cta-actions">

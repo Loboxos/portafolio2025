@@ -13,7 +13,7 @@ const Footer = () => {
             <h3>Soluciones de Gestión Santos</h3>
             <p>Desarrollador de software especializado en soluciones de gestión empresarial</p>
           </div>
-          
+
           <div className="footer-section">
             <h4>Contacto</h4>
             <div className="contact-links">
@@ -29,14 +29,14 @@ const Footer = () => {
                 <Github size={16} />
                 <span>GitHub</span>
               </a>
-              <a href="https://cvdev.io" target="_blank" rel="noopener noreferrer" className="contact-link">
+              <a href="https://cristianvilla.com" target="_blank" rel="noopener noreferrer" className="contact-link">
                 <Globe size={16} />
-                <span>cvdev.io</span>
+                <span>cristianvilla.com</span>
               </a>
             </div>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <p>&copy; {currentYear} SGS Soluciones de Gestión Santos. Todos los derechos reservados.</p>
           <div className="footer-links">
